@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+/* global */
+:root {
+  --deep-sea: #095256;
+  --light-sea: #5AAA95;
+  --floral-white: #FFF8F0;
+  --faded-orange: #FF881166;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+}
+
+.flex-container {
+  display: flex;
+}
+
+h1 {
+  font-family: 'Chelsea Market', cursive;
+  margin: 0;
+}
+
+/* left side */
+.photo-panel {
+  position: relative;
+  background: linear-gradient(var(--light-sea, white), var(--deep-sea, blue));
+  background-image: url("/catamaran-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  flex-grow: 1;
+  max-width: 25rem;
+}
+
+.photo-banner {
+  position: absolute;
+  width: 100%;
+  top: 15%;
+  color: var(--floral-white);
+  background-color: var(--faded-orange);
+  font-size: min(2vw, 20px);
+  text-align: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* right side */
+.right-panel {
+  background-color: blue;
+  flex-direction: column;
+  justify-items: stretch;
+  flex-grow: 3;
+  min-width: 60%;
+}
+
+.panel {
+  flex-grow: 1;
+}
+
+.panel1 {
+  background-color: red;
+}
+
+.panel2 {
+  background-color: green;
+}
+
+.panel3 {
+  background-color: orange;
+}
