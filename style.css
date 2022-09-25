@@ -5,7 +5,7 @@
   --deep-sea: #095256;
   --light-sea: #5AAA95;
   --floral-white: #FFF8F0;
-  --faded-orange: #FF881166;
+  --faded-orange: #FFF8F066;
 }
 
 body {
@@ -25,8 +25,8 @@ h1 {
   font-family: 'Chelsea Market', cursive;
   margin: 0;
 }
-
-/* left side */
+  
+  /* left side */
 .photo-panel {
   position: relative;
   background: linear-gradient(var(--light-sea, white), var(--deep-sea, blue));
@@ -34,20 +34,43 @@ h1 {
   background-size: cover;
   background-position: center;
   flex-grow: 1;
-  max-width: 25rem;
+  max-width: min(25rem, 35%);
 }
 
 .photo-banner {
   position: absolute;
+  align-items: center;
+  justify-content:space-around;
+
   width: 100%;
   top: 15%;
-  color: var(--floral-white);
-  background-color: var(--faded-orange);
-  font-size: min(2vw, 20px);
-  text-align: center;
-  justify-content: center;
+  height: 3em;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.title {
+  font-size: 1em;
+  text-align: center;
+}
+
+#sunrise-icon {
+  height: 100%;
+  filter: invert(75%) sepia(2%) saturate(2579%) hue-rotate(319deg) brightness(128%) contrast(109%);;
+}
+
+.banner-fade {
+  color: var(--floral-white);
+  background: rgb(255,248,240);
+  background: linear-gradient(310deg, rgba(255,248,240,0.05) 0%, rgba(255,136,17,0.3) 100%);
+}
+
+.footer {
+  position: absolute;
+  background-color: var(--floral-white);
+  bottom: 0px;
+  width: 100%;
+  opacity: 0.4;
 }
 
 /* right side */
