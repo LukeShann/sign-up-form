@@ -31,6 +31,10 @@ h1 {
   font-family: 'Chelsea Market', cursive;
   margin: 0;
 }
+
+a {
+  color: inherit;
+}
   
 /* left side */
 .photo-panel {
@@ -79,6 +83,8 @@ h1 {
   bottom: 0px;
   width: 100%;
   opacity: 0.4;
+  font-size: 0.7em;
+  /* text-align: center; */
 }
 
 /* right side */
@@ -98,12 +104,13 @@ h1 {
   flex-grow: 1;
 }
 
-/* first panel */
 .container {
   padding: 5%;
   padding-right: inherit;
   position: absolute;
 }
+
+/* first panel */
 
 .panel1 {
   overflow: scroll;
@@ -163,5 +170,33 @@ input.invalid {
 /* third panel */
 
 .panel3 {
-  
+  font-size: 0.8em;
+}
+
+button {
+  background-color: var(--deep-sea);
+  color: var(--floral-white);
+  padding: 10px 30px 10px 30px;
+  box-shadow: 3px 3px 5px var(--panel-shadow);
+  border: none;
+  border-radius: 4px;
+}
+
+.panel3 a {
+  color: var(--deep-sea);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.panel3 p {
+  padding-top: 5%;
+}
+
+.panel3 footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 3px;
+  color: var(--light-sea);
+  font-size: 0.8em;
 }
