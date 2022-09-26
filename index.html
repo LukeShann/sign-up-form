@@ -26,28 +26,45 @@
       <div class="panel panel2">
         <div class="container">
           <h2>Sign your life away!</h2>
-          <form action="fake.url" method="post">
+          <form id="main-form" action="fake.url" method="post">
             <div class="form-column">
               <label for="fname">First Name</label>
-              <input id="fname" type="text" placeholder="Adam...">
+              <input id="fname" type="text" placeholder="Adam" required>
               <label for="email">Email</label>
-              <input id="email" type="email" placeholder="adam.smith@example.com...">
+              <input id="email" type="email" placeholder="adam.smith@example.com" required>
               <label for="password">Password</label>
-              <input id="password" type="password">
+              <input name="password" onChange="onChange()" type="password" required>
             </div>
             <div class="form-column">
               <label for="lname">Last Name</label>
-              <input id="lname" type="text" placeholder="Smith...">
+              <input id="lname" type="text" placeholder="Smith" required>
               <label for="phone">Phone Number</label>
-              <input id="phone" type="tel" placeholder="0123 456 789...">
-              <label for="confirm-password">Confirm Password</label>
-              <input id="confirm-password" type="password">
+              <input id="phone" type="tel" placeholder="0123 456 789" required>
+              <label for="confirm">Confirm Password</label>
+              <input name="confirm" id="confirm" onChange="onChange()" type="password" required>
             </div>
           </form>
         </div>
       </div>
-      <div class="panel panel3">hi3</div>
+      <div class="panel panel3">
+        <button type="submit" form="main-form"></button>
+      </div>
     </div>
   </div>
+  <script>
+    function onChange() {
+      const password = document.querySelector('input[name=password]');
+      const confirm = document.querySelector('input[name=confirm]');
+      if (confirm.value === password.value) {
+        confirm.setCustomValidity('');
+        confirm.classList.remove('invalid')
+        password.classList.remove('invalid')
+      } else {
+        confirm.setCustomValidity('Passwords do not match');
+        confirm.classList.add('invalid')
+        password.classList.add('invalid')
+      }
+    }
+  </script>
 </body>
 </html>
