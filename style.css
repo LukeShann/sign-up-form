@@ -53,7 +53,6 @@ a {
   align-items: center;
   justify-content:space-evenly;
   justify-self: stretch;
-
   width: 100%;
   top: 15%;
   height: 10%;
@@ -111,7 +110,6 @@ a {
 }
 
 /* first panel */
-
 .panel1 {
   overflow: scroll;
 }
@@ -125,7 +123,6 @@ a {
 }
 
 /* second panel */
-
 form {
   display: flex;
 }
@@ -168,7 +165,6 @@ input.invalid {
 }
 
 /* third panel */
-
 .panel3 {
   font-size: 0.8em;
 }
