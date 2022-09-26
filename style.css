@@ -8,6 +8,7 @@
   --panel-shade: #ece8d9;
   --panel-shadow: #afa787;
   --on-shade-text: #312e21;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 html, body, p, h2 {
@@ -20,7 +21,6 @@ html, body, p, h2 {
   width: 100vw;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 500;
-  font-size: 100%;
 }
 
 .flex-container {
@@ -37,11 +37,11 @@ h1 {
   position: relative;
   background: linear-gradient(var(--light-sea, white), var(--deep-sea, blue));
   background-image: url("./catamaran-banner.jpg");
-  background-size: max(100vh, 500px);
+  background-size: max(100vh, 600px);
   background-position: center;
   background-repeat: no-repeat;
   flex-grow: 1.5;
-  font-size: .8rem;
+  z-index: 2;
 }
 
 .photo-banner {
@@ -60,7 +60,7 @@ h1 {
 .title {
   color: var(--floral-white);
   text-align: center;
-  font-size: calc(1vh * 1vw);
+  font-size: 2rem;
 }
 
 #sunrise-icon {
@@ -84,29 +84,40 @@ h1 {
 /* right side */
 .right-panel {
   flex-direction: column;
-
+  justify-content: center;
   flex-grow: 3;
   max-width: 70%;
 }
 
 .panel {
   position: relative;
-  flex-grow: 1;
-  font-size: clamp(8px, 1em, 20px);
+  font-size: 1em;
   padding-right: 15%;
   background-color: var(--panel-shade);
   color: var(--on-shade-text);
+  flex-grow: 1;
 }
 
+/* first panel */
 .container {
   padding: 5%;
   padding-right: inherit;
   position: absolute;
 }
 
+.panel1 {
+  overflow: scroll;
+}
+
+.panel1>div>p:first-child {
+  font-size: 0.8em;
+}
+
 .panel1>.container {
   bottom: 0;
 }
+
+/* second panel */
 
 form {
   display: flex;
@@ -124,6 +135,7 @@ form {
   box-shadow: 0 3px 10px var(--panel-shadow);
   z-index: 1;
   flex-grow: 2;
+  overflow: scroll;
 }
 
 input {
@@ -133,6 +145,8 @@ input {
 label {
   font-size: 0.8em;
 }
+
+/* third panel */
 
 .panel3 {
   
