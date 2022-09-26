@@ -5,16 +5,22 @@
   --deep-sea: #095256;
   --light-sea: #5AAA95;
   --floral-white: #FFF8F0;
-  --faded-orange: #FFF8F066;
+  --panel-shade: #ece8d9;
+  --panel-shadow: #afa787;
+  --on-shade-text: #312e21;
 }
 
-body {
+html, body, p, h2 {
   margin: 0;
+  padding: 0;
 }
 
 .main {
   height: 100vh;
   width: 100vw;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  font-size: 100%;
 }
 
 .flex-container {
@@ -26,43 +32,45 @@ h1 {
   margin: 0;
 }
   
-  /* left side */
+/* left side */
 .photo-panel {
   position: relative;
   background: linear-gradient(var(--light-sea, white), var(--deep-sea, blue));
-  background-image: url("/catamaran-banner.jpg");
-  background-size: cover;
+  background-image: url("./catamaran-banner.jpg");
+  background-size: max(100vh, 500px);
   background-position: center;
-  flex-grow: 1;
-  max-width: min(25rem, 35%);
+  background-repeat: no-repeat;
+  flex-grow: 1.5;
+  font-size: .8rem;
 }
 
 .photo-banner {
   position: absolute;
   align-items: center;
-  justify-content:space-around;
+  justify-content:space-evenly;
+  justify-self: stretch;
 
   width: 100%;
   top: 15%;
-  height: 3em;
+  height: 10%;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .title {
-  font-size: 1em;
+  color: var(--floral-white);
   text-align: center;
+  font-size: calc(1vh * 1vw);
 }
 
 #sunrise-icon {
-  height: 100%;
-  filter: invert(75%) sepia(2%) saturate(2579%) hue-rotate(319deg) brightness(128%) contrast(109%);;
+  height: min(100%);
+  width: min(100%, 20%);
+  filter: invert(88%) sepia(11%) saturate(1319%) hue-rotate(355deg) brightness(90%) contrast(86%);
 }
 
 .banner-fade {
-  color: var(--floral-white);
-  background: rgb(255,248,240);
-  background: linear-gradient(310deg, rgba(255,248,240,0.05) 0%, rgba(255,136,17,0.3) 100%);
+  background: linear-gradient(310deg, rgba(0, 37, 32,0.05) 0%, rgba(215, 190, 130, 0.3) 100%);
 }
 
 .footer {
@@ -75,25 +83,57 @@ h1 {
 
 /* right side */
 .right-panel {
-  background-color: blue;
   flex-direction: column;
-  justify-items: stretch;
+
   flex-grow: 3;
-  min-width: 60%;
+  max-width: 70%;
 }
 
 .panel {
+  position: relative;
   flex-grow: 1;
+  font-size: clamp(8px, 1em, 20px);
+  padding-right: 15%;
+  background-color: var(--panel-shade);
+  color: var(--on-shade-text);
 }
 
-.panel1 {
-  background-color: red;
+.container {
+  padding: 5%;
+  padding-right: inherit;
+  position: absolute;
+}
+
+.panel1>.container {
+  bottom: 0;
+}
+
+form {
+  display: flex;
+}
+
+.form-column {
+  margin: 10%;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .panel2 {
-  background-color: green;
+  background-color: white;
+  box-shadow: 0 3px 10px var(--panel-shadow);
+  z-index: 1;
+  flex-grow: 2;
+}
+
+input {
+  margin: 3px;
+}
+
+label {
+  font-size: 0.8em;
 }
 
 .panel3 {
-  background-color: orange;
+  
 }

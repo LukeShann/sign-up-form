@@ -1,0 +1,25 @@
+#sunrise-icon {
+  height: 20px;
+  width: 20px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+html {
+  background-color: aqua;
+}
+
+body {
+  margin-right: 0;
+  background-color: brown;
+  height: 80vh;
+  width: 80vw;
+}
+
+* {
+  box-sizing: inherit;
+}
